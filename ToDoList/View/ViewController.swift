@@ -14,7 +14,6 @@ lazy var presenter = Presenter(with: self)
 @IBOutlet weak var textLabel: UILabel!
 override func viewDidLoad() {
     super.viewDidLoad()
-  //  textLabel.text = Model.label
     textLabel.isHidden = true
 }
 @IBAction func tapMeButton(_ sender: Any) {

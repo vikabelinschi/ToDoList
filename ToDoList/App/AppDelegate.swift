@@ -17,8 +17,8 @@ var ViewController: ViewController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
     window = UIWindow(frame:UIScreen.main.bounds)
-        ViewController = ToDoList.ViewController(nibName: "ViewController", bundle: nil)
-        navController = UINavigationController(rootViewController:  ViewController!)
+    ViewController = ToDoList.ViewController(nibName: "ViewController", bundle: nil)
+    navController = UINavigationController(rootViewController:  ViewController!)
     window?.rootViewController = navController
     window?.makeKeyAndVisible()
     
@@ -31,9 +31,12 @@ func applicationDidEnterBackground(_ application: UIApplication) {
 
 }
 func applicationWillEnterForeground(_ application: UIApplication) {
+    
 }
 func applicationDidBecomeActive(_ application: UIApplication) {
+    
 }
 func applicationWillTerminate(_ application: UIApplication) {
+    
 }
 }

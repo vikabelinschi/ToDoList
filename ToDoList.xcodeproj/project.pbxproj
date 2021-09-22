@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F6F730826FB257F00043EE3 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F730626FB257F00043EE3 /* CreateViewController.swift */; };
+		4F6F730926FB257F00043EE3 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6F730726FB257F00043EE3 /* CreateViewController.xib */; };
 		A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CABB26F8B587006FFAC4 /* ViewController.swift */; };
 		A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */; };
 		A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F6F730626FB257F00043EE3 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateViewController.swift; path = ../../../../../Documents/CreateViewController.swift; sourceTree = "<group>"; };
+		4F6F730726FB257F00043EE3 /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CreateViewController.xib; path = ../../../../../Documents/CreateViewController.xib; sourceTree = "<group>"; };
 		A8B8CAB426F8B587006FFAC4 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B8CAB726F8B587006FFAC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B8CABB26F8B587006FFAC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F6F730026FB249D00043EE3 /* CreateToDo */ = {
+			isa = PBXGroup;
+			children = (
+				4F6F730426FB253A00043EE3 /* Model */,
+				4F6F730326FB253300043EE3 /* Views */,
+				4F6F730526FB254600043EE3 /* Presenter */,
+			);
+			path = CreateToDo;
+			sourceTree = "<group>";
+		};
+		4F6F730226FB24CD00043EE3 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				A8B8CB2626F8D2FA006FFAC4 /* Presenter */,
+				A8B8CB2826F8D30A006FFAC4 /* View */,
+				A8B8CB2926F8D31B006FFAC4 /* Model */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		4F6F730326FB253300043EE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4F6F730626FB257F00043EE3 /* CreateViewController.swift */,
+				4F6F730726FB257F00043EE3 /* CreateViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4F6F730426FB253A00043EE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4F6F730526FB254600043EE3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
 		A8B8CAAB26F8B587006FFAC4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +148,8 @@
 		A8B8CAB626F8B587006FFAC4 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				A8B8CB2926F8D31B006FFAC4 /* Model */,
-				A8B8CB2826F8D30A006FFAC4 /* View */,
-				A8B8CB2626F8D2FA006FFAC4 /* Presenter */,
+				4F6F730226FB24CD00043EE3 /* MVP */,
+				4F6F730026FB249D00043EE3 /* CreateToDo */,
 				A8B8CB2526F8D2E2006FFAC4 /* App */,
 				A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */,
 				A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */,
@@ -143,7 +189,8 @@
 			children = (
 				A8B8CB2E26F8E566006FFAC4 /* Presenter.swift */,
 			);
-			path = Presenter;
+			name = Presenter;
+			path = ../Presenter;
 			sourceTree = "<group>";
 		};
 		A8B8CB2826F8D30A006FFAC4 /* View */ = {
@@ -266,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6F730926FB257F00043EE3 /* CreateViewController.xib in Resources */,
 				A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */,
 				A8B8CB3626F9CED2006FFAC4 /* ViewController.xib in Resources */,
 				A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */,
@@ -293,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6F730826FB257F00043EE3 /* CreateViewController.swift in Sources */,
 				A8B8CB3426F9C9FD006FFAC4 /* AppDelegate.swift in Sources */,
 				A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */,
 				A8B8CB2D26F8E1C3006FFAC4 /* Item.swift in Sources */,

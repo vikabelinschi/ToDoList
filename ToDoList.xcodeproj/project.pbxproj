@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F6F730826FB257F00043EE3 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F730626FB257F00043EE3 /* CreateViewController.swift */; };
 		4F6F730926FB257F00043EE3 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6F730726FB257F00043EE3 /* CreateViewController.xib */; };
+		4F6F730C26FB425400043EE3 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F730B26FB425400043EE3 /* UITextField+Extensions.swift */; };
 		A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CABB26F8B587006FFAC4 /* ViewController.swift */; };
 		A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */; };
 		A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		4F6F730626FB257F00043EE3 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateViewController.swift; path = ../../../../../Documents/CreateViewController.swift; sourceTree = "<group>"; };
 		4F6F730726FB257F00043EE3 /* CreateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CreateViewController.xib; path = ../../../../../Documents/CreateViewController.xib; sourceTree = "<group>"; };
+		4F6F730B26FB425400043EE3 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITextField+Extensions.swift"; path = "../../../../Documents/UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		A8B8CAB426F8B587006FFAC4 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B8CAB726F8B587006FFAC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B8CABB26F8B587006FFAC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
+		4F6F730A26FB41E500043EE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F6F730B26FB425400043EE3 /* UITextField+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A8B8CAAB26F8B587006FFAC4 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +160,7 @@
 			children = (
 				4F6F730226FB24CD00043EE3 /* MVP */,
 				4F6F730026FB249D00043EE3 /* CreateToDo */,
+				4F6F730A26FB41E500043EE3 /* Extensions */,
 				A8B8CB2526F8D2E2006FFAC4 /* App */,
 				A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */,
 				A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */,
@@ -344,6 +355,7 @@
 				4F6F730826FB257F00043EE3 /* CreateViewController.swift in Sources */,
 				A8B8CB3426F9C9FD006FFAC4 /* AppDelegate.swift in Sources */,
 				A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */,
+				4F6F730C26FB425400043EE3 /* UITextField+Extensions.swift in Sources */,
 				A8B8CB2D26F8E1C3006FFAC4 /* Item.swift in Sources */,
 				A8B8CB2F26F8E566006FFAC4 /* Presenter.swift in Sources */,
 			);

@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol UserView: AnyObject {
+protocol CreateToDoUserView: AnyObject {
 }
 
-class CreateViewController: UIViewController {
+class CreateToDoViewController: UIViewController {
     @IBOutlet weak private var addButton: UIButton!
     @IBOutlet weak private var addItemTextField: UITextField!
     @IBOutlet weak private var switchButton: UISwitch!
     @IBOutlet weak private var datePicker: UIDatePicker!
     
-    lazy var presenter: UserPresenter = UserPresenterImp(with: self)
-    let radius: CGFloat = 10
+    lazy var presenter: CreateToDoPresenter = CreateToDoPresenterImp(with: self)
+    private let radius: CGFloat = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,6 @@ class CreateViewController: UIViewController {
 
 // MARK:- UIView
 
-extension CreateViewController: UserView {
+extension CreateToDoViewController: CreateToDoUserView {
     
 }

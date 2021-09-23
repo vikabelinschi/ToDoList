@@ -18,8 +18,7 @@ override func viewDidLoad() {
 }
 @IBAction func tapMeButton(_ sender: Any) {
     presenter.buttonTapped()
-    
-}
+    }
 }
 extension ViewController: PresenterView {
    func showLabel() {

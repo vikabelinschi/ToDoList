@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateViewController" customModule="ToDoList" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateToDoViewController" customModule="ToDoList" customModuleProvider="target">
             <connections>
                 <outlet property="addButton" destination="Idh-OK-Gc2" id="F4z-ez-Ufk"/>
                 <outlet property="addItemTextField" destination="GFT-4X-fBq" id="eVg-1T-DU1"/>

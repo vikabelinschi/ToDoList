@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol UserPresenter {
+protocol CreateToDoPresenter {
     var taskArray: [Task] { get }
     func saveData(with task: Task)
 }
 
-class UserPresenterImp: UserPresenter {
-    weak private var view: UserView?
+class CreateToDoPresenterImp: CreateToDoPresenter {
+    weak private var view: CreateToDoUserView?
     var taskArray: [Task] = []
     
-    init(with view: UserView) {
+    init(with view: CreateToDoUserView) {
         self.view = view
     }
     

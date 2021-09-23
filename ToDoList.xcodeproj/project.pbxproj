@@ -10,6 +10,8 @@
 		4F6F731026FB4A9100043EE3 /* CreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6F730E26FB4A9100043EE3 /* CreateViewController.xib */; };
 		4F6F731126FB4A9100043EE3 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F730F26FB4A9100043EE3 /* CreateViewController.swift */; };
 		4F6F731326FB4ACE00043EE3 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F731226FB4ACE00043EE3 /* UITextField+Extensions.swift */; };
+		4F6F731526FC55E400043EE3 /* PresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F731426FC55E400043EE3 /* PresenterImp.swift */; };
+		4F6F731726FC5C6D00043EE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F731626FC5C6D00043EE3 /* Model.swift */; };
 		A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CABB26F8B587006FFAC4 /* ViewController.swift */; };
 		A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */; };
 		A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */; };
@@ -42,6 +44,8 @@
 		4F6F730E26FB4A9100043EE3 /* CreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateViewController.xib; sourceTree = "<group>"; };
 		4F6F730F26FB4A9100043EE3 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		4F6F731226FB4ACE00043EE3 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
+		4F6F731426FC55E400043EE3 /* PresenterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterImp.swift; sourceTree = "<group>"; };
+		4F6F731626FC5C6D00043EE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A8B8CAB426F8B587006FFAC4 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B8CAB726F8B587006FFAC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B8CABB26F8B587006FFAC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		4F6F730426FB253A00043EE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F6F731626FC5C6D00043EE3 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		4F6F730526FB254600043EE3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4F6F731426FC55E400043EE3 /* PresenterImp.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -355,9 +361,11 @@
 				4F6F731326FB4ACE00043EE3 /* UITextField+Extensions.swift in Sources */,
 				A8B8CB3426F9C9FD006FFAC4 /* AppDelegate.swift in Sources */,
 				4F6F731126FB4A9100043EE3 /* CreateViewController.swift in Sources */,
+				4F6F731526FC55E400043EE3 /* PresenterImp.swift in Sources */,
 				A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */,
 				A8B8CB2D26F8E1C3006FFAC4 /* Item.swift in Sources */,
 				A8B8CB2F26F8E566006FFAC4 /* Presenter.swift in Sources */,
+				4F6F731726FC5C6D00043EE3 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

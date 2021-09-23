@@ -7,9 +7,17 @@
 
 import UIKit
 
-class CreateViewController: UIViewController {
+protocol UserView {
+    
+}
+
+class CreateViewController: UIViewController, UserView {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addItemTextField: UITextField!
+    @IBOutlet weak var switchButton: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    lazy var presenter: UserPresenter = UserPresenterImp(with: self)
     let radius: CGFloat = 10
     
     override func viewDidLoad() {
@@ -21,5 +29,7 @@ class CreateViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
+        let info = Task(name: addItemTextField.text, date: datePicker.date, isReminderOn: switchButton.isOn)
+        presenter.SaveData(with: info)
     }
 }

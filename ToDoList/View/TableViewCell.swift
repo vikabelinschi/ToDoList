@@ -8,9 +8,6 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
- 
     @IBOutlet var circle: UIImageView!
     @IBOutlet weak var toDo: UILabel!
-    
-
 }

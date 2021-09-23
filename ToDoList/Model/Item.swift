@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-
 struct Model{
     static var items = [ "Buy Milk", "go to school", "Get Up"]
 }

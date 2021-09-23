@@ -7,27 +7,25 @@
 
 import Foundation
 
-
 protocol PresenterView: AnyObject {
     func onItemsRetrieval(items: [String])
-    
 }
+
 class Presenter {
-weak var view: PresenterView?
-private var items: [String]?
-init(with view: PresenterView) {
-    self.view = view
-}
+    weak var view: PresenterView?
+    private var items: [String]?
+    init(with view: PresenterView) {
+        self.view = view
+    }
     
     func viewDidLoad() {
-           showItems()
-       }
+        showItems()
+    }
     private func showItems() {
         self.items = Model.items
-              
         let items: [String]? = self.items
-              view?.onItemsRetrieval(items: items ?? [])
-          }
+        view?.onItemsRetrieval(items: items ?? [])
     }
+}
 
 

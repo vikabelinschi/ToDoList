@@ -7,50 +7,44 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController {
-lazy var presenter = Presenter(with: self)
-var items: [String] = []
-@IBOutlet weak var btn: UIButton!
-@IBOutlet var tableView: UITableView!
- 
+    lazy var presenter = Presenter(with: self)
+    var items: [String] = []
+    @IBOutlet weak var btn: UIButton!
+    @IBOutlet var tableView: UITableView!
     
-
-    
-override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-                UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().shadowImage = UIImage()
     }
-override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        
     }
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    presenter.viewDidLoad()
-    tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
-    tableView.dataSource = self
-    tableView.tableFooterView = UIView()
-//  btn.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        //  btn.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
+    }
+    
 }
-
-    }
 
 
 extension ViewController: PresenterView {
- 
+    
     func onItemsRetrieval(items: [String]) {
-            print("View recieves the result from the Presenter.")
-            self.items = items
-            self.tableView.reloadData()
+        print("View recieves the result from the Presenter.")
+        self.items = items
+        self.tableView.reloadData()
         print(items)
-        }
-
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {

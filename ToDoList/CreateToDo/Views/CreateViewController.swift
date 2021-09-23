@@ -8,7 +8,6 @@
 import UIKit
 
 protocol UserView {
-    
 }
 
 class CreateViewController: UIViewController, UserView {
@@ -31,5 +30,7 @@ class CreateViewController: UIViewController, UserView {
     @IBAction func addButtonTapped(_ sender: UIButton) {
         let info = Task(name: addItemTextField.text, date: datePicker.date, isReminderOn: switchButton.isOn)
         presenter.SaveData(with: info)
+        
+        navigationController?.popToRootViewController(animated: true)
     }
 }

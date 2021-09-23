@@ -8,20 +8,19 @@
 import Foundation
 
 protocol UserPresenter {
+    var taskArray: [Task] { get }
     func SaveData(with task: Task)
 }
 
 class UserPresenterImp: UserPresenter {
     private var view: UserView?
+    var taskArray: [Task] = []
     
     init(with view: UserView) {
         self.view = view
     }
     
-    var taskArray: [Task] = []
-    
     func SaveData(with task: Task) {
         taskArray.append(task)
-        print(task)
     }
 }

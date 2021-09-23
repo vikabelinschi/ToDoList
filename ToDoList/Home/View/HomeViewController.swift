@@ -7,11 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var btn: UIButton!
-    @IBOutlet var tableView: UITableView!
-    lazy var presenter = Presenter(with: self)
-    var items: [String] = []
+protocol HomeView: AnyObject {
+    func onItemsRetrieval(items: [String])
+}
+
+
+class HomeViewController: UIViewController , HomeView{
+    @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private var tableView: UITableView!
+    private lazy var presenter = HomePresenterImp(with: self)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -27,33 +31,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        tableView.register(UINib(nibName: String(describing: TableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TableViewCell.self))
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
-        //  btn.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
     }
 }
 
-extension ViewController: PresenterView {
+extension HomeViewController: HomePresenter{
     
     func onItemsRetrieval(items: [String]) {
-        print("View recieves the result from the Presenter.")
-        self.items = items
         self.tableView.reloadData()
-        print(items)
     }
 }
 
-extension ViewController: UITableViewDataSource {
+
+extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return presenter.items?.count ?? 0
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        cell.toDo?.text = items[indexPath.row]
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TableViewCell.self), for: indexPath) as? TableViewCell
+        cell?.toDoLabel?.text = presenter.items?[indexPath.row]
+        return cell ?? UITableViewCell()
     }
 }

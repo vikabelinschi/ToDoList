@@ -8,6 +8,6 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet var circle: UIImageView!
-    @IBOutlet weak var toDo: UILabel!
+    @IBOutlet private var bulletPoint: UIImageView!
+    @IBOutlet weak var toDoLabel: UILabel!
 }

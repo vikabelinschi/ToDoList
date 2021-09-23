@@ -34,8 +34,8 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="circle" destination="2Ut-A4-fmF" id="SzL-BJ-iaJ"/>
-                <outlet property="toDo" destination="6si-YH-zQt" id="hW2-vC-pjH"/>
+                <outlet property="bulletPoint" destination="2Ut-A4-fmF" id="uIz-je-BjY"/>
+                <outlet property="toDoLabel" destination="6si-YH-zQt" id="lYq-E1-cCS"/>
             </connections>
             <point key="canvasLocation" x="40.579710144927539" y="-30.133928571428569"/>
         </tableViewCell>

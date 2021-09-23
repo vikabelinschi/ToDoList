@@ -19,16 +19,8 @@ public struct Item {
     }
 }
 
-func dummyData() -> [String]{
-    var items: [Item] = []
-    var names: [String] = []
-    items.append(Item(name:"Buy Milk", date:nil, isReminderOn: false))
-    items.append(Item(name:"Go To School", date:nil, isReminderOn: true))
-    items.append(Item(name:"Get Up", date:nil, isReminderOn: true))
-    for item in items{
-        names.append(item.name ?? "nil")
-    }
-    return names
+func dummyData() -> [String] {
+    return  ["Buy Milk", "Go To School", "Get Up" ]
 }
 
 

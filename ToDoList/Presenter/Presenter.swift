@@ -21,8 +21,9 @@ class Presenter {
     func viewDidLoad() {
         showItems()
     }
+    
     private func showItems() {
-        self.items = Model.items
+        self.items = dummyData()
         let items: [String]? = self.items
         view?.onItemsRetrieval(items: items ?? [])
     }

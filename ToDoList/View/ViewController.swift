@@ -8,10 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var presenter = Presenter(with: self)
-    var items: [String] = []
     @IBOutlet weak var btn: UIButton!
     @IBOutlet var tableView: UITableView!
+    lazy var presenter = Presenter(with: self)
+    var items: [String] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -32,9 +33,7 @@ class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
         //  btn.contentVerticalAlignment = UIControl.ContentVerticalAlignment.top
     }
-    
 }
-
 
 extension ViewController: PresenterView {
     
@@ -44,7 +43,6 @@ extension ViewController: PresenterView {
         self.tableView.reloadData()
         print(items)
     }
-    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -58,7 +56,4 @@ extension ViewController: UITableViewDataSource {
         cell.toDo?.text = items[indexPath.row]
         return cell
     }
-    
-    
-    
 }

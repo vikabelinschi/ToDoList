@@ -6,27 +6,22 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var navController: UINavigationController?
-    var viewController: ViewController?
-    var createViewController: CreateViewController?
+    let viewControllerName = "ViewController"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow(frame:UIScreen.main.bounds)
-        self.viewController = ViewController(nibName: "ViewController", bundle: nil)
-        self.createViewController = CreateViewController(nibName: "CreateViewController", bundle: nil)
-        navController = UINavigationController(rootViewController:  createViewController!)
-        window?.rootViewController = navController
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let rootViewController = ViewController(nibName: viewControllerName, bundle: nil)
+        window?.rootViewController = UINavigationController(rootViewController: rootViewController)
         window?.makeKeyAndVisible()
         
         return true
     }
-
     
     func applicationWillResignActive(_ application: UIApplication) {
     }

@@ -9,19 +9,26 @@ import Foundation
 
 
 protocol PresenterView: AnyObject {
-    func showLabel()
-    func setCustomLabel(custom:String)
+    func onItemsRetrieval(items: [String])
+  //  func setCustomLabel(custom:String)
     
 }
 class Presenter {
 weak var view: PresenterView?
+private var items: [String]?
 init(with view: PresenterView) {
     self.view = view
 }
-    func buttonTapped() {
-        let modelText = Model.label
-        self.view?.setCustomLabel(custom:modelText)
-        self.view?.showLabel()
+    
+    func viewDidLoad() {
+           showItems()
+       }
+    private func showItems() {
+        self.items = Model.items
+              
+        let items: [String]? = self.items
+              view?.onItemsRetrieval(items: items ?? [])
+          }
     }
 
-}
+

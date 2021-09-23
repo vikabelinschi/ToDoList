@@ -16,6 +16,8 @@
 		A8B8CB2F26F8E566006FFAC4 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CB2E26F8E566006FFAC4 /* Presenter.swift */; };
 		A8B8CB3426F9C9FD006FFAC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CAB726F8B587006FFAC4 /* AppDelegate.swift */; };
 		A8B8CB3626F9CED2006FFAC4 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CB3526F9CED2006FFAC4 /* ViewController.xib */; };
+		A8B8CB3826FB5D20006FFAC4 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CB3726FB5D20006FFAC4 /* TableViewCell.xib */; };
+		A8B8CB3A26FB5D96006FFAC4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CB3926FB5D96006FFAC4 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		A8B8CB2C26F8E1C3006FFAC4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ToDoList/Item.swift; sourceTree = SOURCE_ROOT; };
 		A8B8CB2E26F8E566006FFAC4 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = ToDoList/Presenter.swift; sourceTree = SOURCE_ROOT; };
 		A8B8CB3526F9CED2006FFAC4 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewController.xib; path = ToDoList/ViewController.xib; sourceTree = SOURCE_ROOT; };
+		A8B8CB3726FB5D20006FFAC4 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ToDoList/TableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		A8B8CB3926FB5D96006FFAC4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ToDoList/TableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				A8B8CABB26F8B587006FFAC4 /* ViewController.swift */,
+				A8B8CB3926FB5D96006FFAC4 /* TableViewCell.swift */,
 				A8B8CB3526F9CED2006FFAC4 /* ViewController.xib */,
+				A8B8CB3726FB5D20006FFAC4 /* TableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */,
+				A8B8CB3826FB5D20006FFAC4 /* TableViewCell.xib in Resources */,
 				A8B8CB3626F9CED2006FFAC4 /* ViewController.xib in Resources */,
 				A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */,
 			);
@@ -293,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8B8CB3A26FB5D96006FFAC4 /* TableViewCell.swift in Sources */,
 				A8B8CB3426F9C9FD006FFAC4 /* AppDelegate.swift in Sources */,
 				A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */,
 				A8B8CB2D26F8E1C3006FFAC4 /* Item.swift in Sources */,

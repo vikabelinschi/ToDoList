@@ -10,7 +10,6 @@ import Foundation
 
 protocol PresenterView: AnyObject {
     func onItemsRetrieval(items: [String])
-  //  func setCustomLabel(custom:String)
     
 }
 class Presenter {

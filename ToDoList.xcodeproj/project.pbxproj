@@ -50,11 +50,11 @@
 		A8B8CAD526F8B589006FFAC4 /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B8CAD926F8B589006FFAC4 /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		A8B8CADB26F8B589006FFAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A8B8CB2C26F8E1C3006FFAC4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ToDoList/Item.swift; sourceTree = SOURCE_ROOT; };
-		A8B8CB2E26F8E566006FFAC4 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = ToDoList/Presenter.swift; sourceTree = SOURCE_ROOT; };
-		A8B8CB3526F9CED2006FFAC4 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewController.xib; path = ToDoList/ViewController.xib; sourceTree = SOURCE_ROOT; };
-		A8B8CB3726FB5D20006FFAC4 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ToDoList/TableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		A8B8CB3926FB5D96006FFAC4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ToDoList/TableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		A8B8CB2C26F8E1C3006FFAC4 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ToDoList/Model/Item.swift; sourceTree = SOURCE_ROOT; };
+		A8B8CB2E26F8E566006FFAC4 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Presenter.swift; path = ToDoList/Presenter/Presenter.swift; sourceTree = SOURCE_ROOT; };
+		A8B8CB3526F9CED2006FFAC4 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewController.xib; path = ToDoList/View/ViewController.xib; sourceTree = SOURCE_ROOT; };
+		A8B8CB3726FB5D20006FFAC4 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TableViewCell.xib; path = ToDoList/View/TableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		A8B8CB3926FB5D96006FFAC4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ToDoList/View/TableViewCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

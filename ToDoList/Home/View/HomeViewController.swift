@@ -9,9 +9,12 @@ import UIKit
 
 protocol HomeView: AnyObject {
     func onItemsRetrieval()
+    func getNumberOfRows() -> Int
+    func getItem(_ int: Int) -> String
 }
 
 class HomeViewController: UIViewController , HomeView {
+    
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private var tableView: UITableView!
     private lazy var presenter = HomePresenterImp(with: self)
@@ -41,17 +44,25 @@ extension HomeViewController: HomePresenter {
     func onItemsRetrieval() {
         self.tableView.reloadData()
     }
+    
+    func getNumberOfRows() -> Int {
+        return presenter.items?.count ?? 0
+    }
+    
+    func getItem(_ int: Int) -> String {
+        return presenter.items?[int] ?? ""
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.items?.count ?? 0
+        return getNumberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TableViewCell.self), for: indexPath) as? TableViewCell
-        cell?.toDoLabel?.text = presenter.items?[indexPath.row]
+        cell?.toDoLabel?.text = getItem(indexPath.row)
         return cell ?? UITableViewCell()
     }
 }

@@ -21,14 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navController = UINavigationController(rootViewController:  ViewController!)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
-        
         return true
     }
+    
     func applicationWillResignActive(_ application: UIApplication) {
-        
     }
     func applicationDidEnterBackground(_ application: UIApplication) {
-        
     }
     func applicationWillEnterForeground(_ application: UIApplication) {
     }

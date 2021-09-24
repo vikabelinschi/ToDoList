@@ -103,14 +103,6 @@
 			path = CreateToDo;
 			sourceTree = "<group>";
 		};
-		4F6F730226FB24CD00043EE3 /* MVP */ = {
-			isa = PBXGroup;
-			children = (
-				A874D3BD26FDDF52007DDDB3 /* Model */,
-			);
-			path = MVP;
-			sourceTree = "<group>";
-		};
 		4F6F730326FB253300043EE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +139,7 @@
 		A874D3B026FDDE6F007DDDB3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A874D3BD26FDDF52007DDDB3 /* Model */,
 				A874D3B226FDDE7A007DDDB3 /* View */,
 				A874D3B126FDDE75007DDDB3 /* Presenter */,
 			);
@@ -206,7 +199,6 @@
 				A874D3B026FDDE6F007DDDB3 /* Home */,
 				4F6F731826FC6BDD00043EE3 /* ToDoList.entitlements */,
 				A8B8CB2526F8D2E2006FFAC4 /* App */,
-				4F6F730226FB24CD00043EE3 /* MVP */,
 				4F6F730026FB249D00043EE3 /* CreateToDo */,
 				4F6F730A26FB41E500043EE3 /* Extensions */,
 				A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */,

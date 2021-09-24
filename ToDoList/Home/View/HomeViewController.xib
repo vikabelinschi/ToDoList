@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ToDoList">
             <connections>
-                <outlet property="addButton" destination="Azs-gb-F3T" id="6kq-BZ-EwU"/>
+                <outlet property="addButton" destination="Azs-gb-F3T" id="kUZ-iE-Ryu"/>
                 <outlet property="tableView" destination="a4t-Sz-mX4" id="9XF-b2-4a7"/>
                 <outlet property="view" destination="0cF-nv-8nB" id="FTO-dH-EVX"/>
             </connections>
@@ -41,13 +41,13 @@
                 </navigationBar>
                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azs-gb-F3T">
                     <rect key="frame" x="298" y="731" width="57" height="57"/>
-                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <color key="backgroundColor" red="0.83636784549999998" green="0.1825478375" blue="0.12929379939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="57" id="Bol-F3-l3D"/>
                         <constraint firstAttribute="height" constant="57" id="CvX-WD-Y2Z"/>
                     </constraints>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="43"/>
-                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <color key="tintColor" red="0.90237814189999999" green="0.016891486939999999" blue="0.019270630550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <state key="normal" title="+">
                         <color key="titleColor" systemColor="systemBackgroundColor"/>
                     </state>
@@ -65,6 +65,9 @@
                             <size key="value" width="0.0" height="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addButtonTaped:" destination="-1" eventType="touchUpInside" id="MkM-KT-tKy"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -81,9 +84,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

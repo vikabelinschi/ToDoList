@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  ToDoList
 //
 //  Created by Valeria Belinschi on 20.09.2021.
@@ -9,24 +9,23 @@ import UIKit
 
 protocol HomeView: AnyObject {
     func onItemsRetrieval()
-    func getNumberOfRows() -> Int
-    func getItem(_ int: Int) -> String
 }
 
-class HomeViewController: UIViewController , HomeView {
+class HomeViewController: UIViewController {
     
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private var tableView: UITableView!
     lazy var presenter = HomePresenterImp(with: self)
-    let tableViewCell = String(describing: TableViewCell.self)
+    let createToDoViewController = String(describing: CreateToDoViewController.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: tableViewCell, bundle: nil), forCellReuseIdentifier: tableViewCell)
+        tableView.register(UINib(nibName: UIView.tableViewCell, bundle: nil), forCellReuseIdentifier: UIView.tableViewCell)
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
         UINavigationBar.appearance().shadowImage = UIImage()
+        addButton.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,32 +37,33 @@ class HomeViewController: UIViewController , HomeView {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    @IBAction func addButtonTaped(_ sender: UIButton) {
+        let createViewController = CreateToDoViewController(nibName: createToDoViewController, bundle: nil)
+        navigationController?.pushViewController(createViewController, animated: true)
+    }
 }
 
-extension HomeViewController: HomePresenter {
+extension UIView {
+    static let tableViewCell = String(describing: TableViewCell.self)
+}
+
+extension HomeViewController: HomeView {
     
     func onItemsRetrieval() {
         self.tableView.reloadData()
-    }
-    
-    func getNumberOfRows() -> Int {
-        return presenter.items?.count ?? 0
-    }
-    
-    func getItem(_ int: Int) -> String {
-        return presenter.items?[int] ?? ""
     }
 }
 
 extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return getNumberOfRows()
+        return presenter.getNumberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TableViewCell.self), for: indexPath) as? TableViewCell
-        cell?.toDoLabel?.text = getItem(indexPath.row)
+        let cell = tableView.dequeueReusableCell(withIdentifier: UIView.tableViewCell, for: indexPath) as? TableViewCell
+        cell?.toDoLabel?.text = presenter.getItem(indexPath.row)
         return cell ?? UITableViewCell()
     }
 }

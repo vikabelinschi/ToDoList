@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: rootViewController)
         window?.makeKeyAndVisible()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { succes, error in
+            if succes {
+                return
+            } else {
+                if error != nil {
+                    // To DO Alert controller with notification
+                }
+            }
+        }
+        
         return true
     }
     

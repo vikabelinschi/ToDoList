@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 protocol CreateToDoUserView: AnyObject {
 }
@@ -18,6 +19,7 @@ class CreateToDoViewController: UIViewController {
     
     lazy var presenter: CreateToDoPresenter = CreateToDoPresenterImp(with: self)
     private let radius: CGFloat = 10
+    private let notificationTitle = "TO DO APP"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class CreateToDoViewController: UIViewController {
         let info = Task(name: addItemTextField.text, date: datePicker.date, isReminderOn: switchButton.isOn)
         presenter.saveData(with: info)
         navigationController?.popToRootViewController(animated: true)
+        info.isReminderOn! ? presenter.creareAlert(title: notificationTitle, body: info.name!) : nil
     }
 }
 

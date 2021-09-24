@@ -1,26 +1,20 @@
-//
-//  UserPresenter.swift
-//  ToDoList
-//
-//  Created by Nicolae Lupu on 23.09.2021.
-//
-
 import Foundation
 
 protocol CreateToDoPresenter {
     var taskArray: [Task] { get }
-    func saveData(with task: Task)
+    func saveData(name: String?, date: Date?, isSwitchOn: Bool?)
 }
 
 class CreateToDoPresenterImp: CreateToDoPresenter {
-    weak private var view: CreateToDoUserView?
+    weak private var view: CreateToDoView?
     var taskArray: [Task] = []
     
-    init(with view: CreateToDoUserView) {
+    init(with view: CreateToDoView) {
         self.view = view
     }
     
-    func saveData(with task: Task) {
+    func saveData(name: String?, date: Date?, isSwitchOn: Bool?) {
+        let task = Task(name: name, date: date, isReminderOn: isSwitchOn)
         taskArray.append(task)
     }
 }

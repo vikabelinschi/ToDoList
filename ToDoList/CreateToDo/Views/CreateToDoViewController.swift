@@ -1,13 +1,6 @@
-//
-//  CreateViewController.swift
-//  ToDoList
-//
-//  Created by Nicolae Lupu on 22.09.2021.
-//
-
 import UIKit
 
-protocol CreateToDoUserView: AnyObject {
+protocol CreateToDoView: AnyObject {
 }
 
 class CreateToDoViewController: UIViewController {
@@ -28,14 +21,13 @@ class CreateToDoViewController: UIViewController {
     }
     
     @IBAction private func addButtonTapped(_ sender: UIButton) {
-        let info = Task(name: addItemTextField.text, date: datePicker.date, isReminderOn: switchButton.isOn)
-        presenter.saveData(with: info)
+        presenter.saveData(name: addItemTextField.text, date: datePicker.date, isSwitchOn: switchButton.isOn)
         navigationController?.popToRootViewController(animated: true)
     }
 }
 
 // MARK:- UIView
 
-extension CreateToDoViewController: CreateToDoUserView {
+extension CreateToDoViewController: CreateToDoView {
     
 }

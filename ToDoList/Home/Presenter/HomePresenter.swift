@@ -10,6 +10,7 @@ import Foundation
 protocol HomePresenter: AnyObject {
     func viewDidLoad()
 }
+
 class HomePresenterImp: HomePresenter {
     weak var view: HomeView?
     var items: [String]?
@@ -19,7 +20,7 @@ class HomePresenterImp: HomePresenter {
     }
     
     func viewDidLoad() {
-        view?.onItemsRetrieval(items: items ?? [])
+        view?.onItemsRetrieval()
     }
 }
 

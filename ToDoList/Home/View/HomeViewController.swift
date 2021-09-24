@@ -17,11 +17,12 @@ class HomeViewController: UIViewController , HomeView {
     
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private var tableView: UITableView!
-    private lazy var presenter = HomePresenterImp(with: self)
+    lazy var presenter = HomePresenterImp(with: self)
+    let tableViewCell = String(describing: TableViewCell.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: String(describing: TableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TableViewCell.self))
+        tableView.register(UINib(nibName: tableViewCell, bundle: nil), forCellReuseIdentifier: tableViewCell)
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)

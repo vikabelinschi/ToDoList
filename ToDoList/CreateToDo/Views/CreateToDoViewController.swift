@@ -1,5 +1,5 @@
 //
-//  CreateViewController.swift
+//  CreateToDoViewController.swift
 //  ToDoList
 //
 //  Created by Nicolae Lupu on 22.09.2021.
@@ -7,9 +7,6 @@
 
 import UIKit
 import UserNotifications
-
-protocol CreateToDoUserView: AnyObject {
-}
 
 class CreateToDoViewController: UIViewController {
     @IBOutlet weak private var addButton: UIButton!
@@ -30,15 +27,18 @@ class CreateToDoViewController: UIViewController {
     }
     
     @IBAction private func addButtonTapped(_ sender: UIButton) {
-        let info = Task(name: addItemTextField.text, date: datePicker.date, isReminderOn: switchButton.isOn)
-        presenter.saveData(with: info)
+        presenter.saveData(name: addItemTextField.text, date: datePicker.date, isSwitchOn: switchButton.isOn)
         navigationController?.popToRootViewController(animated: true)
-        info.isReminderOn! ? presenter.creareAlert(title: notificationTitle, body: info.name!) : nil
+        presenter.createNotification(title: notificationTitle, body: addItemTextField.text!, date: datePicker.date)
     }
 }
 
 // MARK:- UIView
 
-extension CreateToDoViewController: CreateToDoUserView {
-    
+extension CreateToDoViewController: CreateToDoView {
+    func createAlert(_ error: Error?) {
+        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
+        alert.addAction(alertAction)
+    }
 }

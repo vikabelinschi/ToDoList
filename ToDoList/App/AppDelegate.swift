@@ -21,14 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { succes, error in
-            if succes {
-                return
-            } else {
                 if error != nil {
-                    // To DO Alert controller with notification
+                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
+                    alert.addAction(alertAction)
                 }
             }
-        }
         
         return true
     }

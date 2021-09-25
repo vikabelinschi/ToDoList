@@ -8,6 +8,7 @@
 import UIKit
 
 public struct Task {
+    let UUIDstring = UUID().uuidString
     let name: String?
     let date: Date?
     var isReminderOn: Bool?

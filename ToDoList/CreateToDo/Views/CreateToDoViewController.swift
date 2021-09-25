@@ -16,7 +16,6 @@ class CreateToDoViewController: UIViewController {
     
     lazy var presenter: CreateToDoPresenter = CreateToDoPresenterImp(with: self)
     private let radius: CGFloat = 10
-    private let notificationTitle = "TO DO APP"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,6 @@ class CreateToDoViewController: UIViewController {
     @IBAction private func addButtonTapped(_ sender: UIButton) {
         presenter.saveData(name: addItemTextField.text, date: datePicker.date, isSwitchOn: switchButton.isOn)
         navigationController?.popToRootViewController(animated: true)
-        presenter.createNotification(title: notificationTitle, body: addItemTextField.text!, date: datePicker.date)
     }
 }
 

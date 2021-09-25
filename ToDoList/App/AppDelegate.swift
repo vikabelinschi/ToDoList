@@ -27,22 +27,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     alert.addAction(alertAction)
                 }
             }
+        configureUserNotifications()
         
         return true
     }
     
-    func applicationWillResignActive(_ application: UIApplication) {
+    private func configureUserNotifications() {
+        UNUserNotificationCenter.current().delegate = self
     }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
+}
+
+//MARK:- UNUserNotificationCenterDelegate
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+  func userNotificationCenter(
+    _ center: UNUserNotificationCenter,
+    willPresent notification: UNNotification,
+    withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void
+  ) {
+    completionHandler(.banner)
+  }
 }

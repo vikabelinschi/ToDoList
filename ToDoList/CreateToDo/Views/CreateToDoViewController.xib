@@ -89,7 +89,7 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NcB-xw-ALy">
-                    <rect key="frame" x="26" y="762" width="338" height="48"/>
+                    <rect key="frame" x="26" y="752" width="338" height="48"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idh-OK-Gc2">
                             <rect key="frame" x="0.0" y="0.0" width="338" height="48"/>
@@ -113,7 +113,7 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NcB-xw-ALy" secondAttribute="trailing" constant="26" id="LOl-vv-BvS"/>
                 <constraint firstItem="gpn-yH-BVi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="MyB-DO-Lwm"/>
-                <constraint firstItem="NcB-xw-ALy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Nzl-Tw-qei"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NcB-xw-ALy" secondAttribute="bottom" constant="10" id="cRI-NL-ZA6"/>
                 <constraint firstAttribute="trailing" secondItem="gpn-yH-BVi" secondAttribute="trailing" constant="12" id="i3n-rC-1P9"/>
                 <constraint firstItem="NcB-xw-ALy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="m5w-aH-ESM"/>
                 <constraint firstItem="gpn-yH-BVi" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="12" id="vTr-ku-KVF"/>

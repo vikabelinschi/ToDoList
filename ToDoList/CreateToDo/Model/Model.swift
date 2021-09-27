@@ -8,14 +8,14 @@
 import UIKit
 
 public struct Task {
-    let UUIDstring = UUID().uuidString
+    let id = UUID().uuidString
     let name: String
-    let date: Date
+    let notificationDate: Date
     var isReminderOn: Bool
-    
-    init(name: String, date: Date, isReminderOn: Bool) {
+
+    init(name: String, notificationDate: Date, isReminderOn: Bool = false) {
         self.name = name
-        self.date = date
+        self.notificationDate = notificationDate
         self.isReminderOn = isReminderOn
     }
 }

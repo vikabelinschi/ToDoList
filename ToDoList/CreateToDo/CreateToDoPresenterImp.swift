@@ -17,7 +17,7 @@ class CreateToDoPresenterImp: CreateToDoPresenter {
     
     func saveData(name: String?, date: Date, isSwitchOn: Bool) {
         if let extractedName = name {
-            let task = Task(name: extractedName, date: date, isReminderOn: isSwitchOn)
+            let task = Task(name: extractedName, notificationDate: date, isReminderOn: isSwitchOn)
             taskArray.append(task)
             let notificationManager = NotificationService()
             notificationManager.createNotification(with: task)

@@ -27,6 +27,7 @@ class CreateToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addItemTextField.text = LocalizedStrings.Alert.title
         addItemTextField.addBottomBorder()
         addButton.layer.cornerRadius = ButtonProperties.radius
         addButton.clipsToBounds = true

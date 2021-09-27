@@ -12,10 +12,10 @@ public struct Task {
     let notificationDate: Date
     var isReminderOn: Bool
     
-    init(name: String, notificationDate: Date, isReminderOn: Bool) {
+    init(name: String, notificationDate: Date, isReminderOn: Bool = false) {
         self.name = name
         self.notificationDate = notificationDate
-        self.isReminderOn = false
+        self.isReminderOn = isReminderOn
     }
 }
 

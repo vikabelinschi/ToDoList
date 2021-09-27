@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ToDoList">
+            <connections>
+                <outlet property="addButton" destination="Azs-gb-F3T" id="kUZ-iE-Ryu"/>
+                <outlet property="tableView" destination="a4t-Sz-mX4" id="9XF-b2-4a7"/>
+                <outlet property="view" destination="0cF-nv-8nB" id="FTO-dH-EVX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0cF-nv-8nB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4t-Sz-mX4">
+                    <rect key="frame" x="16" y="96" width="374" height="637"/>
+                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="637" id="3Sa-a9-iWE"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <navigationBar contentMode="scaleToFill" id="PeC-qp-u1C">
+                    <rect key="frame" x="8" y="52" width="374" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <color key="barTintColor" systemColor="systemBackgroundColor"/>
+                    <textAttributes key="titleTextAttributes">
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                        <offsetWrapper key="textShadowOffset" horizontal="-230" vertical="0.0"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="Tasks" id="3t6-AU-17b"/>
+                    </items>
+                </navigationBar>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azs-gb-F3T">
+                    <rect key="frame" x="298" y="731" width="57" height="57"/>
+                    <color key="backgroundColor" red="0.83636784549999998" green="0.1825478375" blue="0.12929379939999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="57" id="Bol-F3-l3D"/>
+                        <constraint firstAttribute="height" constant="57" id="CvX-WD-Y2Z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="43"/>
+                    <color key="tintColor" red="0.90237814189999999" green="0.016891486939999999" blue="0.019270630550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" systemColor="systemBackgroundColor"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="26.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addButtonTaped:" destination="-1" eventType="touchUpInside" id="MkM-KT-tKy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="a4t-Sz-mX4" secondAttribute="trailing" id="KYb-bv-B6q"/>
+                <constraint firstAttribute="bottom" secondItem="Azs-gb-F3T" secondAttribute="bottom" constant="56" id="MXp-Iw-1Xz"/>
+                <constraint firstAttribute="trailing" secondItem="Azs-gb-F3T" secondAttribute="trailing" constant="35" id="qHg-iL-eTB"/>
+                <constraint firstItem="a4t-Sz-mX4" firstAttribute="leading" secondItem="0cF-nv-8nB" secondAttribute="leading" constant="16" id="tWm-qv-UXW"/>
+                <constraint firstItem="a4t-Sz-mX4" firstAttribute="top" secondItem="PeC-qp-u1C" secondAttribute="bottom" id="wYw-yY-7wo"/>
+            </constraints>
+            <point key="canvasLocation" x="-346.15384615384613" y="-560.18957345971558"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

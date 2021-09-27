@@ -12,29 +12,17 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let viewControllerName = "ViewController"
+    private var navController: UINavigationController?
+    private var viewController: HomeViewController?
+    let homeViewController = String(describing: HomeViewController.self)
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = ViewController(nibName: viewControllerName, bundle: nil)
-        window?.rootViewController = UINavigationController(rootViewController: rootViewController)
-        window?.makeKeyAndVisible()
         
+        window = UIWindow(frame:UIScreen.main.bounds)
+        viewController = ToDoList.HomeViewController(nibName: homeViewController, bundle: nil)
+        navController = UINavigationController(rootViewController:  viewController!)
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
         return true
-    }
-    
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-    
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
     }
 }

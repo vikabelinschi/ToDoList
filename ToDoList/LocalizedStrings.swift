@@ -10,5 +10,6 @@ import Foundation
 enum LocalizedStrings {
     enum Alert {
         static let title = "Error".localized
+        static let admit = "OK".localized
     }
 }

@@ -21,7 +21,7 @@ class NotificationService {
             let request = UNNotificationRequest(identifier: task.id, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { error in
                 guard error == nil else {
-                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alert = UIAlertController(title: LocalizedStrings.Alert.title, message: error?.localizedDescription, preferredStyle: .alert)
                     let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
                     return alert.addAction(alertAction)
                 }

@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { succes, error in
                 guard error == nil else {
-                    let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alert = UIAlertController(title: LocalizedStrings.Alert.title, message: error?.localizedDescription, preferredStyle: .alert)
                     let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
                     return alert.addAction(alertAction)
                 }

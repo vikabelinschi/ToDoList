@@ -8,5 +8,4 @@
 import Foundation
 
 protocol CreateToDoView: AnyObject {
-    func createAlert(_ error: Error?)
 }

@@ -46,9 +46,5 @@ class CreateToDoViewController: UIViewController {
 // MARK:- UIView
 
 extension CreateToDoViewController: CreateToDoView {
-    func createAlert(_ error: Error?) {
-        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
-        alert.addAction(alertAction)
-    }
+
 }

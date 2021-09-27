@@ -14,6 +14,7 @@
 		4F6F731D26FDF88A00043EE3 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F731C26FDF88A00043EE3 /* CreateToDoView.swift */; };
 		4F6F732426FFA3F000043EE3 /* CreateToDoPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F732226FFA3F000043EE3 /* CreateToDoPresenterImp.swift */; };
 		4F6F732526FFA3F000043EE3 /* CreateToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F732326FFA3F000043EE3 /* CreateToDoPresenter.swift */; };
+		4F6F735A2701B3B700043EE3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F73592701B3B700043EE3 /* NotificationService.swift */; };
 		A8B8CABC26F8B587006FFAC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CABB26F8B587006FFAC4 /* ViewController.swift */; };
 		A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */; };
 		A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 		4F6F731C26FDF88A00043EE3 /* CreateToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		4F6F732226FFA3F000043EE3 /* CreateToDoPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateToDoPresenterImp.swift; path = Presenter/CreateToDoPresenterImp.swift; sourceTree = "<group>"; };
 		4F6F732326FFA3F000043EE3 /* CreateToDoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateToDoPresenter.swift; path = Presenter/CreateToDoPresenter.swift; sourceTree = "<group>"; };
+		4F6F73592701B3B700043EE3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		A8B8CAB426F8B587006FFAC4 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B8CAB726F8B587006FFAC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B8CABB26F8B587006FFAC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				4F6F730426FB253A00043EE3 /* Model */,
 				4F6F730326FB253300043EE3 /* Views */,
 				4F6F730526FB254600043EE3 /* Presenter */,
+				4F6F73582701B39B00043EE3 /* Services */,
 			);
 			path = CreateToDo;
 			sourceTree = "<group>";
@@ -146,6 +149,14 @@
 				4F6F731226FB4ACE00043EE3 /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4F6F73582701B39B00043EE3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F6F73592701B3B700043EE3 /* NotificationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		A8B8CAAB26F8B587006FFAC4 = {
@@ -367,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F6F731326FB4ACE00043EE3 /* UITextField+Extensions.swift in Sources */,
+				4F6F735A2701B3B700043EE3 /* NotificationService.swift in Sources */,
 				4F6F731D26FDF88A00043EE3 /* CreateToDoView.swift in Sources */,
 				A8B8CB3426F9C9FD006FFAC4 /* AppDelegate.swift in Sources */,
 				4F6F731126FB4A9100043EE3 /* CreateToDoViewController.swift in Sources */,

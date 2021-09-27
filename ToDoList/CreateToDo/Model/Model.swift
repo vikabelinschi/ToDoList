@@ -8,13 +8,14 @@
 import UIKit
 
 public struct Task {
-    let name: String?
-    let date: Date?
-    var isReminderOn: Bool?
+    let name: String
+    let notificationDate: Date
+    var isReminderOn: Bool
     
-    init(name: String?, date: Date?, isReminderOn: Bool?) {
+    init(name: String, notificationDate: Date, isReminderOn: Bool) {
         self.name = name
-        self.date = date
-        self.isReminderOn = isReminderOn
+        self.notificationDate = notificationDate
+        self.isReminderOn = false
     }
 }
+

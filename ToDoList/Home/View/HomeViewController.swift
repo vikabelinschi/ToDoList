@@ -44,10 +44,6 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension UIView {
-    static let tableViewCell = String(describing: TableViewCell.self)
-}
-
 extension HomeViewController: HomeView {
     
     func onItemsRetrieval() {
@@ -63,7 +59,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UIView.tableViewCell, for: indexPath) as? TableViewCell
-        cell?.toDoLabel?.text = presenter.getItem(indexPath.row)
+        cell?.toDoLabel.text = presenter.getItem(at:indexPath.row) ?? ""
         return cell ?? UITableViewCell()
     }
 }

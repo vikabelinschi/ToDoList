@@ -18,4 +18,3 @@ public struct Task {
         self.isReminderOn = isReminderOn
     }
 }
-

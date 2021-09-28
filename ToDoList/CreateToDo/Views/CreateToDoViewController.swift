@@ -10,11 +10,17 @@ import UIKit
 protocol CreateToDoUserView: AnyObject {
 }
 
+protocol CreateToDoViewControllerDelegate {
+    func addNewItem(_ task: Task)
+}
+
 class CreateToDoViewController: UIViewController {
     @IBOutlet weak private var addButton: UIButton!
     @IBOutlet weak private var addItemTextField: UITextField!
     @IBOutlet weak private var switchButton: UISwitch!
     @IBOutlet weak private var datePicker: UIDatePicker!
+    
+    var createToDoDelegate: CreateToDoViewControllerDelegate?
     
     lazy var presenter: CreateToDoPresenter = CreateToDoPresenterImp(with: self)
     private let radius: CGFloat = 10
@@ -30,7 +36,7 @@ class CreateToDoViewController: UIViewController {
     @IBAction private func addButtonTapped(_ sender: UIButton) {
         if let text = addItemTextField.text, !text.isEmpty {
             let info = Task(name: addItemTextField.text ?? "nil", notificationDate: datePicker.date, isReminderOn: switchButton.isOn)
-            presenter.saveData(with: info)
+            createToDoDelegate?.addNewItem(info)
             navigationController?.popToRootViewController(animated: true)
             return
         }

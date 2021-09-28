@@ -8,21 +8,15 @@
 import Foundation
 
 protocol HomePresenter: AnyObject {
-    func viewDidLoad()
     func getNumberOfRows() -> Int
     func getItem(at row: Int) -> String?
 }
 
 class HomePresenterImp: HomePresenter {
     weak var view: HomeView?
-    var items: [String] = []
+    var items: [Task] = []
     init(with view: HomeView) {
         self.view = view
-        self.items = getDummyData()
-    }
-    
-    func viewDidLoad() {
-        view?.onItemsRetrieval()
     }
     
     func getNumberOfRows() -> Int {
@@ -30,10 +24,7 @@ class HomePresenterImp: HomePresenter {
     }
     
     func getItem(at row: Int) -> String? {
-        return items[row]
-    }
-    func getDummyData() -> [String] {
-        return  ["Buy Milk", "Go To School", "Get Up" ]
+        return items[row].name
     }
 }
 

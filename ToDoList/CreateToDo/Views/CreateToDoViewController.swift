@@ -26,7 +26,15 @@ class CreateToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
+    }
+    
+    @IBAction private func addButtonTapped(_ sender: UIButton) {
+        presenter.saveData(name: addItemTextField.text, date: datePicker.date, isSwitchOn: switchButton.isOn)
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
+    private func setupUI() {
         addItemTextField.addBottomBorder()
         addButton.layer.cornerRadius = ButtonProperties.radius
         addButton.clipsToBounds = true
@@ -35,11 +43,6 @@ class CreateToDoViewController: UIViewController {
         addButton.layer.shadowRadius = ButtonProperties.shadowRadius
         addButton.layer.shadowOpacity = ButtonProperties.shadowOpacity
         addButton.layer.masksToBounds = false
-    }
-    
-    @IBAction private func addButtonTapped(_ sender: UIButton) {
-        presenter.saveData(name: addItemTextField.text, date: datePicker.date, isSwitchOn: switchButton.isOn)
-        navigationController?.popToRootViewController(animated: true)
     }
 }
 

@@ -8,10 +8,12 @@
 import Foundation
 
 class CreateToDoPresenterImp: CreateToDoPresenter {
+    private let notificationService: NotificationService
     weak private var view: CreateToDoView?
     internal var taskArray: [Task] = []
     
     init(with view: CreateToDoView) {
+        self.notificationService = NotificationService()
         self.view = view
     }
     
@@ -19,8 +21,7 @@ class CreateToDoPresenterImp: CreateToDoPresenter {
         if let extractedName = name {
             let task = Task(name: extractedName, notificationDate: date, isReminderOn: isSwitchOn)
             taskArray.append(task)
-            let notificationManager = NotificationService()
-            notificationManager.createNotification(with: task)
+            notificationService.createNotification(with: task)
         }
     }
 }

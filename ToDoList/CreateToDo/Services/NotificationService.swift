@@ -20,9 +20,9 @@ class NotificationService {
             let trigger = UNCalendarNotificationTrigger(dateMatching: calendar, repeats: false)
             let request = UNNotificationRequest(identifier: task.id, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request) { error in
-                guard error == nil else {
-                    let alert = UIAlertController(title: LocalizedStrings.Alert.title, message: error?.localizedDescription, preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
+                if let error = error  {
+                    let alert = UIAlertController(title: LocalizedStrings.Alert.title, message: error.localizedDescription, preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: LocalizedStrings.Alert.admit, style: .default, handler: .none)
                     return alert.addAction(alertAction)
                 }
             }

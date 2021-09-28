@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { succes, error in
-                guard error == nil else {
-                    let alert = UIAlertController(title: LocalizedStrings.Alert.title, message: error?.localizedDescription, preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "OK", style: .default, handler: .none)
+                if let error = error {
+                    let alert = UIAlertController(title: LocalizedStrings.Alert.title, message: error.localizedDescription, preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: LocalizedStrings.Alert.admit, style: .default, handler: .none)
                     return alert.addAction(alertAction)
                 }
             }

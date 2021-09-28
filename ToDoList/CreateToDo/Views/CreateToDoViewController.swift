@@ -1,14 +1,12 @@
 //
-//  CreateViewController.swift
+//  CreateToDoViewController.swift
 //  ToDoList
 //
 //  Created by Nicolae Lupu on 22.09.2021.
 //
 
 import UIKit
-
-protocol CreateToDoUserView: AnyObject {
-}
+import UserNotifications
 
 protocol CreateToDoViewControllerDelegate {
     func addNewItem(_ task: Task)
@@ -21,12 +19,19 @@ class CreateToDoViewController: UIViewController {
     @IBOutlet weak private var datePicker: UIDatePicker!
     var createToDoDelegate: CreateToDoViewControllerDelegate?
     lazy var presenter: CreateToDoPresenter = CreateToDoPresenterImp(with: self)
-    private let radius: CGFloat = 10
+    
+    enum ButtonProperties {
+        static let radius: CGFloat = 10
+        static let shadowColor = UIColor.black.cgColor
+        static let shadowOffset = CGSize(width: 2, height: 2)
+        static let shadowRadius: CGFloat = 2
+        static let shadowOpacity: Float = 0.8
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addItemTextField.addBottomBorder()
-        addButton.layer.cornerRadius = radius
+        addButton.layer.cornerRadius = ButtonProperties.radius
         addButton.clipsToBounds = true
     }
     
@@ -34,13 +39,26 @@ class CreateToDoViewController: UIViewController {
         if let text = addItemTextField.text, !text.isEmpty {
             let info = Task(name: addItemTextField.text ?? "nil", notificationDate: datePicker.date, isReminderOn: switchButton.isOn)
             createToDoDelegate?.addNewItem(info)
+            presenter.saveData(info)
             navigationController?.popToRootViewController(animated: true)
             return
         }
+        setupUI()
+    }
+    
+    private func setupUI() {
+        addItemTextField.addBottomBorder()
+        addButton.layer.cornerRadius = ButtonProperties.radius
+        addButton.clipsToBounds = true
+        addButton.layer.shadowColor = ButtonProperties.shadowColor
+        addButton.layer.shadowOffset = ButtonProperties.shadowOffset
+        addButton.layer.shadowRadius = ButtonProperties.shadowRadius
+        addButton.layer.shadowOpacity = ButtonProperties.shadowOpacity
+        addButton.layer.masksToBounds = false
     }
 }
 
 // MARK:- UIView
 
-extension CreateToDoViewController: CreateToDoUserView {
+extension CreateToDoViewController: CreateToDoView {
 }

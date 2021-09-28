@@ -10,6 +10,8 @@ import Foundation
 protocol HomePresenter: AnyObject {
     func getNumberOfRows() -> Int
     func getItem(at row: Int) -> String?
+    func addNewItem(_ task: Task)
+    func removeItem(at row: Int)
 }
 
 class HomePresenterImp: HomePresenter {
@@ -20,11 +22,18 @@ class HomePresenterImp: HomePresenter {
     }
     
     func getNumberOfRows() -> Int {
-        return items.count
+            return items.count
     }
     
     func getItem(at row: Int) -> String? {
         return items[row].name
     }
+    
+    func addNewItem(_ task: Task) {
+        items.append(task)
+    }
+ 
+    func removeItem(at row: Int) {
+        items.remove(at: row)
+    }
 }
-

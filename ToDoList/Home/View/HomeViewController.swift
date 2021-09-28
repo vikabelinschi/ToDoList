@@ -13,7 +13,7 @@ protocol HomeView: AnyObject {
 class HomeViewController: UIViewController, HomeView {
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private var tableView: UITableView!
-    lazy var presenter = HomePresenterImp(with: self)
+    var presenter: HomePresenter!
     let createToDoViewController = String(describing: CreateToDoViewController.self)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +67,7 @@ extension HomeViewController: UITableViewDataSource {
     func presentDeletionFailsafe(indexPath: IndexPath) {
         let alert = UIAlertController(title: "Delete Task", message: "Are you sure you'd like to delete the task?", preferredStyle: .alert)
         let deleteAction = UIAlertAction(title: "Delete", style: .default) { _ in
-            self.presenter.items.remove(at: indexPath.row)
+            self.presenter.removeItem(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
@@ -80,7 +80,7 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: CreateToDoViewControllerDelegate {
     func addNewItem(_ task: Task) {
-        presenter.items.append(task)
+        presenter.addNewItem(task)
         self.tableView.reloadData()
     }
 }

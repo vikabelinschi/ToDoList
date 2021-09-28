@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol CreateToDoPresenter {
+protocol CreateToDoPresenter: AnyObject {
     var taskArray: [Task] { get }
     func saveData(name: String?, date: Date, isSwitchOn: Bool)
 }

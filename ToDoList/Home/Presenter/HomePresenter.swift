@@ -16,6 +16,8 @@ protocol HomePresenter: AnyObject {
 class HomePresenterImp: HomePresenter {
     weak var view: HomeView?
     var items: [String] = []
+    weak private var createView: CreateToDoView?
+    
     init(with view: HomeView) {
         self.view = view
         self.items = getDummyData()

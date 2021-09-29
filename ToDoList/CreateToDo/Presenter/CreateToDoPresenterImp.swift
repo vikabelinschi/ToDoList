@@ -8,11 +8,13 @@
 import Foundation
 
 class CreateToDoPresenterImp: CreateToDoPresenter {
+    
     private let notificationService: NotificationService
     private let coreDataService: CoreDataImp
+    weak private var homeView: HomeView?
     weak private var view: CreateToDoView?
     internal var taskArray: [Task] = []
-    
+        
     init(with view: CreateToDoView) {
         self.notificationService = NotificationService()
         self.coreDataService = CoreDataImp()

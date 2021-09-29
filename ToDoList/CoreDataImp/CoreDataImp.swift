@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataImp {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func fetchData(taskArray: inout [Item], tableView: UITableView) {
         do{
@@ -36,7 +36,7 @@ class CoreDataImp {
         }
     }
     
-    func deleteData(from item: NSManagedObject) {
+    func deleteData(_ item: Item) {
         context.delete(item)
         do {
             try self.context.save()

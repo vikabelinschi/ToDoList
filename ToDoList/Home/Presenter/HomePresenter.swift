@@ -11,14 +11,16 @@ protocol HomePresenter: AnyObject {
     func viewDidLoad()
     func getNumberOfRows() -> Int
     func getItem(at row: Int) -> String?
+    func addTask(task: Item)
 }
 
 class HomePresenterImp: HomePresenter {
     weak var view: HomeView?
-    var items: [String] = []
+    var items: [Item] = []
+    weak private var createView: CreateToDoView?
+    
     init(with view: HomeView) {
         self.view = view
-        self.items = getDummyData()
     }
     
     func viewDidLoad() {
@@ -30,10 +32,11 @@ class HomePresenterImp: HomePresenter {
     }
     
     func getItem(at row: Int) -> String? {
-        return items[row]
+        return items[row].name
     }
-    func getDummyData() -> [String] {
-        return  ["Buy Milk", "Go To School", "Get Up" ]
+    
+    func addTask(task: Item) {
+        items.append(task)
     }
 }
 

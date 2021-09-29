@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     lazy var presenter = HomePresenterImp(with: self)
     let createToDoViewController = String(describing: CreateToDoViewController.self)
+    var coreDataService = CoreDataImp()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        coreDataService.fetchData(taskArray: &presenter.items, tableView: self.tableView)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     

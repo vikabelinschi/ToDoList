@@ -8,12 +8,16 @@
 import Foundation
 
 class CreateToDoPresenterImp: CreateToDoPresenter {
+    
     private let notificationService: NotificationService
+    private let coreDataService: CoreDataImp
+    weak private var homeView: HomeView?
     weak private var view: CreateToDoView?
     internal var taskArray: [Task] = []
-    
+        
     init(with view: CreateToDoView) {
         self.notificationService = NotificationService()
+        self.coreDataService = CoreDataImp()
         self.view = view
     }
     
@@ -22,6 +26,7 @@ class CreateToDoPresenterImp: CreateToDoPresenter {
             let task = Task(name: extractedName, notificationDate: date, isReminderOn: isSwitchOn)
             taskArray.append(task)
             notificationService.createNotification(with: task)
+            coreDataService.saveData(from: task)
         }
     }
 }

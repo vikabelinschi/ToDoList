@@ -28,4 +28,9 @@ class NotificationService {
             }
         }
     }
+    
+    func deleteNotification(with task: Task) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [task.id]
+        )
+    }
 }

@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, HomeView {
     }
     
     @IBAction func addButtonTaped(_ sender: UIButton) {
-        let createViewController = CreateToDoViewController(nibName: createToDoViewController, bundle: nil)
+        let createViewController = CreateToDoViewController(nibName: "CreateToDoViewController", bundle: nil)
         createViewController.createToDoDelegate = self
         navigationController?.pushViewController(createViewController, animated: true)
     }
@@ -65,15 +65,15 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func presentDeletionFailsafe(indexPath: IndexPath) {
-        let alert = UIAlertController(title: "Delete Task", message: "Are you sure you'd like to delete the task?", preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "Delete", style: .default) { _ in
+        let alert = UIAlertController(title: LocalizedStrings.DeleteAlert.title.localized, message: LocalizedStrings.DeleteAlert.message.localized, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: LocalizedStrings.DeleteAction.delete.localized, style: .default) { _ in
             self.presenter.removeItem(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
         deleteAction.setValue(UIColor.red, forKey: "titleTextColor")
         alert.addAction(deleteAction)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: LocalizedStrings.DeleteAlert.cancel.localized, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }

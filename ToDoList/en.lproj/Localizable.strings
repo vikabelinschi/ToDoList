@@ -2,3 +2,11 @@
 "Error" = "Error";
 
 "OK" = "OK";
+
+"Delete Task" = "Delete Task";
+
+"Are you sure you'd like to delete the task?" = "Are you sure you'd like to delete the task?";
+
+"Delete" = "Delete";
+
+"Cancel" = "Cancel";

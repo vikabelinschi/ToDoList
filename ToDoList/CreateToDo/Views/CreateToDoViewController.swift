@@ -37,7 +37,7 @@ class CreateToDoViewController: UIViewController {
     
     @IBAction private func addButtonTapped(_ sender: UIButton) {
         if let text = addItemTextField.text, !text.isEmpty {
-            let info = Task(name: addItemTextField.text ?? "nil", notificationDate: datePicker.date, isReminderOn: switchButton.isOn)
+            let info = Task(name: addItemTextField.text ?? "", notificationDate: datePicker.date, isReminderOn: switchButton.isOn)
             createToDoDelegate?.addNewItem(info)
             presenter.saveData(info)
             navigationController?.popToRootViewController(animated: true)

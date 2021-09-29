@@ -8,32 +8,32 @@
 import Foundation
 
 protocol HomePresenter: AnyObject {
-    func viewDidLoad()
     func getNumberOfRows() -> Int
     func getItem(at row: Int) -> String?
+    func addNewItem(_ task: Task)
+    func removeItem(at row: Int)
 }
 
 class HomePresenterImp: HomePresenter {
     weak var view: HomeView?
-    var items: [String] = []
+    var items: [Task] = []
     init(with view: HomeView) {
         self.view = view
-        self.items = getDummyData()
-    }
-    
-    func viewDidLoad() {
-        view?.onItemsRetrieval()
     }
     
     func getNumberOfRows() -> Int {
-        return items.count
+            return items.count
     }
     
     func getItem(at row: Int) -> String? {
-        return items[row]
+        return items[row].name
     }
-    func getDummyData() -> [String] {
-        return  ["Buy Milk", "Go To School", "Get Up" ]
+    
+    func addNewItem(_ task: Task) {
+        items.append(task)
+    }
+ 
+    func removeItem(at row: Int) {
+        items.remove(at: row)
     }
 }
-

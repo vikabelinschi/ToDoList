@@ -10,8 +10,6 @@
 		4F6F731026FB4A9100043EE3 /* CreateToDoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6F730E26FB4A9100043EE3 /* CreateToDoViewController.xib */; };
 		4F6F731126FB4A9100043EE3 /* CreateToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F730F26FB4A9100043EE3 /* CreateToDoViewController.swift */; };
 		4F6F731326FB4ACE00043EE3 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F731226FB4ACE00043EE3 /* UITextField+Extensions.swift */; };
-		4F6F731726FC5C6D00043EE3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F731626FC5C6D00043EE3 /* Model.swift */; };
-		4F6F735C2701C35E00043EE3 /* CreateToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F735B2701C35E00043EE3 /* CreateToDoPresenter.swift */; };
 		4F6F735E2701C36500043EE3 /* CreateToDoPresenterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F735D2701C36500043EE3 /* CreateToDoPresenterImp.swift */; };
 		4F6F73602701C3BD00043EE3 /* CreateToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F735F2701C3BD00043EE3 /* CreateToDoView.swift */; };
 		4F6F73652701C4B900043EE3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6F73642701C4B900043EE3 /* NotificationService.swift */; };
@@ -24,6 +22,8 @@
 		A874D3BB26FDDEA7007DDDB3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874D3B726FDDEA7007DDDB3 /* HomeViewController.swift */; };
 		A874D3BC26FDDEA7007DDDB3 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A874D3B826FDDEA7007DDDB3 /* HomeViewController.xib */; };
 		A874D3C12701A501007DDDB3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874D3C02701A501007DDDB3 /* UIView+Extensions.swift */; };
+		A874D3CF27033ADC007DDDB3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874D3CE27033ADC007DDDB3 /* Model.swift */; };
+		A874D3D127033C48007DDDB3 /* CreateToDoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A874D3D027033C48007DDDB3 /* CreateToDoPresenter.swift */; };
 		A8B8CAC126F8B589006FFAC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */; };
 		A8B8CAC426F8B589006FFAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B8CAC226F8B589006FFAC4 /* LaunchScreen.storyboard */; };
 		A8B8CACF26F8B589006FFAC4 /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B8CACE26F8B589006FFAC4 /* ToDoListTests.swift */; };
@@ -52,9 +52,7 @@
 		4F6F730E26FB4A9100043EE3 /* CreateToDoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateToDoViewController.xib; sourceTree = "<group>"; };
 		4F6F730F26FB4A9100043EE3 /* CreateToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateToDoViewController.swift; sourceTree = "<group>"; };
 		4F6F731226FB4ACE00043EE3 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
-		4F6F731626FC5C6D00043EE3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4F6F731826FC6BDD00043EE3 /* ToDoList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToDoList.entitlements; sourceTree = "<group>"; };
-		4F6F735B2701C35E00043EE3 /* CreateToDoPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateToDoPresenter.swift; sourceTree = "<group>"; };
 		4F6F735D2701C36500043EE3 /* CreateToDoPresenterImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateToDoPresenterImp.swift; sourceTree = "<group>"; };
 		4F6F735F2701C3BD00043EE3 /* CreateToDoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateToDoView.swift; sourceTree = "<group>"; };
 		4F6F73642701C4B900043EE3 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -69,6 +67,8 @@
 		A874D3B726FDDEA7007DDDB3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A874D3B826FDDEA7007DDDB3 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		A874D3C02701A501007DDDB3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A874D3CE27033ADC007DDDB3 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ToDoList/Model/Model.swift; sourceTree = SOURCE_ROOT; };
+		A874D3D027033C48007DDDB3 /* CreateToDoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateToDoPresenter.swift; sourceTree = "<group>"; };
 		A8B8CAB426F8B587006FFAC4 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8B8CAB726F8B587006FFAC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8B8CAC026F8B589006FFAC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		4F6F730426FB253A00043EE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4F6F731626FC5C6D00043EE3 /* Model.swift */,
+				A874D3CE27033ADC007DDDB3 /* Model.swift */,
 			);
 			name = Model;
 			path = CreateToDo/Model;
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4F6F735D2701C36500043EE3 /* CreateToDoPresenterImp.swift */,
-				4F6F735B2701C35E00043EE3 /* CreateToDoPresenter.swift */,
+				A874D3D027033C48007DDDB3 /* CreateToDoPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -395,13 +395,13 @@
 				A874D3C12701A501007DDDB3 /* UIView+Extensions.swift in Sources */,
 				4F7058F22701F34F005C38DC /* LocalizedStrings.swift in Sources */,
 				4F6F73652701C4B900043EE3 /* NotificationService.swift in Sources */,
-				4F6F735C2701C35E00043EE3 /* CreateToDoPresenter.swift in Sources */,
+				A874D3CF27033ADC007DDDB3 /* Model.swift in Sources */,
 				4F7058F02701F31B005C38DC /* String+Extension.swift in Sources */,
 				A874D3BA26FDDEA7007DDDB3 /* TableViewCell.swift in Sources */,
 				A874D3BB26FDDEA7007DDDB3 /* HomeViewController.swift in Sources */,
 				A874D3B426FDDE99007DDDB3 /* HomePresenter.swift in Sources */,
-				4F6F731726FC5C6D00043EE3 /* Model.swift in Sources */,
 				4F6F735E2701C36500043EE3 /* CreateToDoPresenterImp.swift in Sources */,
+				A874D3D127033C48007DDDB3 /* CreateToDoPresenter.swift in Sources */,
 				4F6F73602701C3BD00043EE3 /* CreateToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

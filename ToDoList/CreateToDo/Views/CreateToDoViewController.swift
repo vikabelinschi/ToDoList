@@ -8,12 +8,16 @@
 import UIKit
 import UserNotifications
 
+protocol CreateToDoViewControllerDelegate {
+    func addNewItem(_ task: Task)
+}
+
 class CreateToDoViewController: UIViewController {
     @IBOutlet weak private var addButton: UIButton!
     @IBOutlet weak private var addItemTextField: UITextField!
     @IBOutlet weak private var switchButton: UISwitch!
     @IBOutlet weak private var datePicker: UIDatePicker!
-    
+    var createToDoDelegate: CreateToDoViewControllerDelegate?
     lazy var presenter: CreateToDoPresenter = CreateToDoPresenterImp(with: self)
     
     enum ButtonProperties {
@@ -26,12 +30,20 @@ class CreateToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        addItemTextField.addBottomBorder()
+        addButton.layer.cornerRadius = ButtonProperties.radius
+        addButton.clipsToBounds = true
     }
     
     @IBAction private func addButtonTapped(_ sender: UIButton) {
-        presenter.saveData(name: addItemTextField.text, date: datePicker.date, isSwitchOn: switchButton.isOn)
-        navigationController?.popToRootViewController(animated: true)
+        if let text = addItemTextField.text, !text.isEmpty {
+            let info = Task(name: addItemTextField.text ?? "", notificationDate: datePicker.date, isReminderOn: switchButton.isOn)
+            createToDoDelegate?.addNewItem(info)
+            presenter.saveData(info)
+            navigationController?.popToRootViewController(animated: true)
+            return
+        }
+        setupUI()
     }
     
     private func setupUI() {
@@ -49,5 +61,4 @@ class CreateToDoViewController: UIViewController {
 // MARK:- UIView
 
 extension CreateToDoViewController: CreateToDoView {
-
 }

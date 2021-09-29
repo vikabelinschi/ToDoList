@@ -30,9 +30,7 @@ class CreateToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addItemTextField.addBottomBorder()
-        addButton.layer.cornerRadius = ButtonProperties.radius
-        addButton.clipsToBounds = true
+        setupUI()
     }
     
     @IBAction private func addButtonTapped(_ sender: UIButton) {
@@ -43,7 +41,6 @@ class CreateToDoViewController: UIViewController {
             navigationController?.popToRootViewController(animated: true)
             return
         }
-        setupUI()
     }
     
     private func setupUI() {

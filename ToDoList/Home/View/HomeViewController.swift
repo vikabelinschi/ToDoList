@@ -7,22 +7,13 @@
 
 import UIKit
 
-protocol HomeView: AnyObject {
-}
-
 class HomeViewController: UIViewController, HomeView {
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private var tableView: UITableView!
     var presenter: HomePresenter!
-    let createToDoViewController = String(describing: CreateToDoViewController.self)
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: UIView.tableViewCell, bundle: nil), forCellReuseIdentifier: UIView.tableViewCell)
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        addButton.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +31,29 @@ class HomeViewController: UIViewController, HomeView {
         createViewController.createToDoDelegate = self
         navigationController?.pushViewController(createViewController, animated: true)
     }
+    
+    private func setupUI(){
+        tableView.register(UINib(nibName: UIView.tableViewCell, bundle: nil), forCellReuseIdentifier: UIView.tableViewCell)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.tableFooterView = UIView()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        addButton.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let editToDoViewController = EditToDoViewController(nibName: "EditToDoViewController", bundle: nil)
+        let myItem = presenter.getItem(at: indexPath.row)
+        let myItemIndex = indexPath.row
+        editToDoViewController.item = myItem
+        editToDoViewController.itemIndex = myItemIndex
+        editToDoViewController.editToDoViewControllerDelegate = self
+        navigationController?.pushViewController(editToDoViewController, animated: true)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -50,7 +64,7 @@ extension HomeViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UIView.tableViewCell, for: indexPath) as? TableViewCell
-        cell?.toDoLabel.text = presenter.getItem(at:indexPath.row) ?? ""
+        cell?.toDoLabel.text = presenter.getItemName(at:indexPath.row) 
         return cell ?? UITableViewCell()
     }
     
@@ -81,6 +95,13 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: CreateToDoViewControllerDelegate {
     func addNewItem(_ task: Task) {
         presenter.addNewItem(task)
+        self.tableView.reloadData()
+    }
+}
+
+extension HomeViewController: EditToDoViewControllerDelegate {
+    func getEditedItem(at row: Int,_ task: Task) {
+        presenter.editItem(at: row, task)
         self.tableView.reloadData()
     }
 }
